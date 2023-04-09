@@ -36,12 +36,18 @@ updateProduct(){
     this.props.history.push("/update-product");
 }   
  viewProduct(id){
-  this.props.history.push("/view-product/");
+  console.log(id);
+  this.props.history.push(`/view-product/${id}`);
 
 }
 
 deleteProduct(){
   this.props.history.push("/delete-product/");
+}
+
+view(id){
+  console.log(id);
+  this.props.history.push(`/view-product/${id}`)
 }
 
 render(){
@@ -86,6 +92,10 @@ render(){
   <button className="btn btn-primary" onClick={this.viewProduct}>View Product</button>
 
   <button className="btn btn-success" onClick={this.deleteProduct}>Delete Product</button>
+
+  <button className="btn btn-info" onClick={ () => this.view(product.id)} >View </button>
+
+  
   
   
 
